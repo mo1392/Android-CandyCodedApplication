@@ -1,6 +1,5 @@
 package com.pluralsight.candycoded;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,17 +8,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.pluralsight.candycoded.DB.CandyContract;
-import com.pluralsight.candycoded.DB.CandyCursorAdapter;
-import com.pluralsight.candycoded.DB.CandyDbHelper;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
+import com.pluralsight.candycoded.DB.CandyContract;
+import com.pluralsight.candycoded.DB.CandyCursorAdapter;
+import com.pluralsight.candycoded.DB.CandyDbHelper;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -71,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
             //adapter.changeCursor(cursor);
           }
         });
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    Intent infoIntent = new Intent(this, InfoActivity.class);
+    startActivity(infoIntent);
+
+    return super.onOptionsItemSelected(item);
   }
 
   @Override
