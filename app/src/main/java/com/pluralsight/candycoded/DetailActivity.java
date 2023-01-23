@@ -70,4 +70,18 @@ public class DetailActivity extends AppCompatActivity {
     // ***
     // TODO - Task 4 - Share the Current Candy with an Intent
     // ***
-}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+      createShareInent();
+      return super.onOptionsItemSelected(item);
+    }
+    Private void createShareInent(){
+        Intent shareIntent = new IntInt(Intent,ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, SHARE_DESCRIPTION = mCandyImageUrl = HASHTAG_CANDYCODED);
+        startActiovity(shareIntent);
+
+        }
+
+    }
+
